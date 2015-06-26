@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script type="text/javascript" src="indexedDB.min.js"></script>
+    </head>
+    <body>
+        <h1>The indexedDB initial and add data in object stores</h1>
+        <p id="msg"></p>
+        <script>
+            window.onload = function () {
+                var msgEl = document.getElementById("msg");
+                var testDB = new IndexedDB("test");
+                testDB.open();
+                testDB.onupgradeneeded = function (e) {
+                    alert("hi");
+                    this.getDB();
+               
+            
+               } 
+                //            testDB.onready = function (e) {
+                    //                var db = this.getDB();
+                    //                alert("hi");
+                    //                var store = db.createObjectStore("list", {keyPath: "item_no"});
+                    //                store.createIndex("item_desc", "item_desc", {unique: false});
+            }
+            </script>
+    </body>
+</html>
